@@ -1,0 +1,23 @@
+version: '2.4'
+
+services:
+  text-generation-wbui:
+    build:
+      context: -
+      dockerfile: backend/Dockerfile.text-generation-webui
+    restart: always
+    ports:
+      - 0.0.0.0:3000:3000
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+      NVIDIA_VISIBLE_DEVICES: all
+    volumes: []
+
+
+

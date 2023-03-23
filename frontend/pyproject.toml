@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "skully"
+version = "0.1.0"
+description = ""
+authors = ["David Matthew Mattli"]
+license = "GPLv3"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pasimple = "^0.0.1"
+vad = "^1.0"
+gpiozero = "^1.6.2"
+pigpio = "^1.78"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
