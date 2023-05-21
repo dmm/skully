@@ -1,6 +1,20 @@
 version: '2.4'
 
 services:
+  whisper:
+    image: onerahmet/openai-whisper-asr-webservice:latest-gpu
+    ports:
+      - 9000:9000
+    environment:
+      ASR_MODEL=base.en
+      ASR_ENGINE=openai_whisper
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
   text-generation-wbui:
     build:
       context: -
